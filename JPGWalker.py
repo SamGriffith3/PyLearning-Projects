@@ -5,12 +5,9 @@ def all_pictures(): # define a function to recursively search through Pictures f
     import os  # imports os components
     for root, dirs, files in os.walk('C:\\Users\\Sam\\Pictures'):  # recursively searches for jpg images
              for item in files:
-                 if item.lower().endswith(suffix)== True:  # searches for suffix through jpgs
-                    all_jpgs.append(os.path.join(root, item)  # appends image location to list
-             else:
-                continue
+                 if item.lower().endswith(suffix):  # searches for suffix through jpgs
+                    all_jpgs.append(os.path.join(root, item):  # appends image location to list
 
 all_pictures()
-
 print(all_jpgs)  # prints list of image locations
 print(len(all_jpgs))  # prints number of images found
