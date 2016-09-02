@@ -1,13 +1,13 @@
 import sys, getopt
 import csv
 import json
-import pprint
+
 
 
 #Get Command Line Arguments
 def main(argv):
-    input_file = 'C:\\Users\\Sam\\Downloads\\SalesJan2009.csv'
-    output_file = 'C:\\Users\\Sam\\Documents\\Scoury.json'
+    inp_file = 'C:\\Users\\Sam\\Downloads\\SalesJan2009.csv'  # Change this to desired CSV input file path
+    outp_file = 'C:\\Users\\Sam\\Documents\\Scoury.json'  # Change this to desired JSON output file path
     format = 'pprint'
     try:
         opts, args = getopt.getopt(argv,"hi:o:f:",["ifile=","ofile=","format="])
@@ -19,12 +19,12 @@ def main(argv):
             print('csv_json.py -i <path to inputfile> -o <path to outputfile> -f <dump/pretty>')
             sys.exit()
         elif opt in ("-i", "--ifile"):
-            input_file = arg
+            inp_file = arg
         elif opt in ("-o", "--ofile"):
             output_file = arg
         elif opt in ("-f", "--format"):
             format = arg
-    read_csv(input_file, output_file, format)
+    read_csv(inp_file, outp_file, format)
 
 #Read CSV File
 def read_csv(file, json_file, format):
