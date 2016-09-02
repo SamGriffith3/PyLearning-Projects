@@ -2,7 +2,7 @@
 import datetime
 dt = datetime.datetime.now()
 
-def What_Time_Is_It():
+def what_time_is_it():
     if dt.time() < datetime.time(12, 00) and dt.time() > datetime.time(5,00):
         print("Good Morning Sleepy Head")
     elif dt.time() < datetime.time(17, 00) and dt.time() > datetime.time(12,00):
@@ -12,4 +12,5 @@ def What_Time_Is_It():
     else:
         print("Up late again I see...")
 
-What_Time_Is_It()
+if __name__ == '__main__':
+what_time_is_it()
