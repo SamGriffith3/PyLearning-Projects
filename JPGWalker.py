@@ -13,3 +13,5 @@ def all_pictures(directory): # define a function to recursively search through d
 all_pictures('C:\\Users\\Sam\\Pictures')  # call directory here
 print(all_jpgs)  # prints list of image locations
 print(len(all_jpgs)) # prints number of images found
+
+
