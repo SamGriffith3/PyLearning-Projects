@@ -12,7 +12,8 @@ dingy = {'ship_len': 2}
 def new_matrix():
     return [[0 for _ in range(10)] for _ in range(10)]
 
-def p1_place_a_ship(s):
+def place_a_ship(s):
+
     print("Place your ", s)
     length = s['ship_len']
     vertical = True if input("vertical? (y/n): ") in ("y", "Y") else False
@@ -24,48 +25,37 @@ def p1_place_a_ship(s):
     assert 0 <= start_x < 10
     assert 0 <= start_y < 10
 
-    for i in range(length):
-        if vertical:
-           p1_matrix[start_y + i][start_x] = s['ship_len']
+    for player in input("Player Number"):
+        if player == 1:
+            for i in range(length):
+                if vertical:
+                    p1_matrix[start_y + i][start_x] = s['ship_len']
+                else:
+                    p1_matrix[start_y][start_x + i] = s['ship_len']
+
+        elif player == 2:
+            for i in range(length):
+                if vertical:
+                    p2_matrix[start_y + i][start_x] = s['ship_len']
+                else:
+                    p2_matrix[start_y][start_x + i] = s['ship_len']
+
         else:
-            p1_matrix[start_y][start_x + i] = s['ship_len']
+            continue
 
-    pprint.pprint(p1_matrix)
 
-def p2_place_a_ship(s):
-    print("Place your ", s)
-    length = s['ship_len']
-    vertical = True if input("vertical? (y/n): ") in ("y", "Y") else False
-    #start_at = input("Where should I start it (bottom/left)?")
 
-    start_x = int(input("Sideways #"))
-    start_y = int(input('Vertical #'))
-
-    assert 0 <= start_x < 10
-    assert 0 <= start_y < 10
-
-    for i in range(length):
-        if vertical:
-           p2_matrix[start_y + i][start_x] = s['ship_len']
-        else:
-           p2_matrix[start_y][start_x + i] = s['ship_len']
-
-    pprint.pprint(p2_matrix)
-#  Where the program starts running
 p2_matrix = new_matrix()
 p1_matrix = new_matrix()
 
 print("Player 1, Your Turn!")
-p1_place_a_ship(aircraft_carrier)
-p1_place_a_ship(battleship)
-p1_place_a_ship(submarine)
-p1_place_a_ship(destroyer)
-p1_place_a_ship(dingy)
+for ship in (aircraft_carrier, battleship, submarine, destroyer, dingy):
+    place_a_ship(ship)
+pprint.pprint(p1_matrix)
+print("Player 2, Your Turn!")
+for ship in (aircraft_carrier, battleship, submarine, destroyer, dingy):
+   place_a_ship(ship)
+pprint.pprint(p2_matrix)
 
-print('Player 2, Your Turn')
-p2_place_a_ship(aircraft_carrier)
-p2_place_a_ship(battleship)
-p2_place_a_ship(submarine)
-p2_place_a_ship(destroyer)
-p2_place_a_ship(dingy)
+
 
