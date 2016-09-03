@@ -3,7 +3,7 @@ import email.utils
 from email.mime.text import MIMEText
 import socket
 
-print (socket.getfqdn('https://google.mail.com'))
+print(socket.getfqdn('https://google.mail.com'))
 # Create the message
 msg = MIMEText('This is the body of the message.')
 msg['To'] = email.utils.formataddr(('Recipient', 'samgriffith3@gmail.com'))
