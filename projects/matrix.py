@@ -113,7 +113,7 @@ while i and z != 0:
     else:
         print("Player 1 Wins!!!")
         break
-
+#  or here? return z, i
 
 print("Player 1's Board")
 pprint.pprint(p1_matrix)
