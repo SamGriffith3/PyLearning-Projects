@@ -96,22 +96,24 @@ def take_a_turn(player):
             p2_guessed_matrix[guess_x][guess_y] = 9
             print("HIT")
             p1_matrix[guess_x][guess_y] = 0
-    return z
-    return i
+
 
 while i and z != 0:
+    return z, i
     if z and i != 0:
         print("game on")
         take_a_turn(1)
         take_a_turn(2)
         pprint.pprint(p1_matrix)
         pprint.pprint(p2_matrix)
+
     elif z == 0:
         print("Player 2 Wins!!!")
         break
     else:
         print("Player 1 Wins!!!")
         break
+
 
 print("Player 1's Board")
 pprint.pprint(p1_matrix)
