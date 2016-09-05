@@ -99,7 +99,8 @@ def take_a_turn(player):
 
 
 while i and z != 0:
-    return z, i
+    z = matrix_sum(1)
+    i = matrix_sum(2)
     if z and i != 0:
         print("game on")
         take_a_turn(1)
@@ -113,7 +114,6 @@ while i and z != 0:
     else:
         print("Player 1 Wins!!!")
         break
-#  or here? return z, i
 
 print("Player 1's Board")
 pprint.pprint(p1_matrix)
