@@ -3,10 +3,22 @@
 
 def stringer (x):
   number_string = str(x)
-  a = number_string[0]
-  b = number_string[1] 
-  c = number_string[2] 
-  d = number_string[3] 
+  if number_string[0] /= 0: 
+      a = number_string[0];
+  elif
+      continue:
+    if number_string[1] /= 0: 
+      b = number_string[1];
+  elif
+      continue:
+    if number_string[2] /= 0: 
+      c = number_string[2];
+  elif
+      continue:
+    if number_string[3] /= 0: 
+      d = number_string[3];
+  elif
+      continue: 
 
 
 a_list = [ "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
@@ -16,7 +28,11 @@ d_list = [ "M", "MM", "MMM"]
 
 
 x = int(input("Your Number(up to 3999):  "))
-stringer
+
+
+stringer(x)
+
+
 print (d_list[d-1] + c_list[c-1] + b_list[b-1] + a_list[a-1] )
 
 
